@@ -1,0 +1,20 @@
+Criando perfil de usuario:
+
+CREATE ROLE Administrador;
+
+-------------------------------------------------------------------------------
+
+Adicionando conta ao perfil de usuario Administrador:
+
+CREATE USER analista IDENTIFIED BY 'Senai_UC10'
+DEFAULT ROLE Administrador;
+
+-------------------------------------------------------------------------------
+
+Adicionando permissão de acessos a conta do perfil de usuario Administrador:
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON coma_bem.* TO Administrador;
+
+
+-------------------------------------------------------------------------------
+
