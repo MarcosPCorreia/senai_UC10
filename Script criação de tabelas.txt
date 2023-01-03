@@ -1,0 +1,29 @@
+Criação da tabela Produto usando Linguagem DDL:
+
+CREATE TABLE `produto` (
+	`idProduto` INT(10) NOT NULL DEFAULT '0',
+	`nome` VARCHAR(200) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`preco` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`quantidade` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`idUnidadeMedida` INT(10) NULL DEFAULT NULL,
+	PRIMARY KEY (`idProduto`) USING BTREE,
+	INDEX `FK__unidademedida` (`idUnidadeMedida`) USING BTREE,
+	CONSTRAINT `FK__unidademedida` FOREIGN KEY (`idUnidadeMedida`) REFERENCES `coma_bem`.`unidademedida` (`idUnidadeMedida`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+;
+
+----------------------------------------------------------------------------------------------------
+
+Criação da tabela UnidadeMedida usando Linguagem DDL: 
+
+CREATE TABLE `unidademedida` (
+	`idUnidadeMedida` INT(10) NOT NULL AUTO_INCREMENT,
+	`unidadeMedida` VARCHAR(200) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+	PRIMARY KEY (`idUnidadeMedida`) USING BTREE
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=4
+;
