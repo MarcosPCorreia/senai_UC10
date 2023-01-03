@@ -1,0 +1,30 @@
+Script de Inserção:
+
+USE coma_bem;
+INSERT INTO produto (nome, preco, quantidade, idUnidadeMedida) VALUES ('Arroz', '31,00', '5', 1);
+
+--------------------------------------------------------------------------------------------------
+
+Script de Alteração:
+
+USE coma_bem;
+UPDATE produto SET idUnidadeMedida = (SELECT un.idUnidademedida 
+FROM unidademedida as un WHERE un.unidadeMedida LIKE '%Peça') 
+WHERE nome = 'Carne'
+
+--------------------------------------------------------------------------------------------------
+
+Script de Consulta:
+
+USE coma_bem;
+SELECT p.nome, p.preco, p.quantidade, un.unidadeMedida 
+FROM produto AS p 
+INNER JOIN unidademedida AS un 
+WHERE un.unidadeMedida = 'Litros' AND un.idUnidadeMedida = p.idUnidadeMedida;
+
+--------------------------------------------------------------------------------------------------
+
+Script de Exclusão:
+
+USE coma_bem;
+DELETE FROM produto WHERE nome = 'Arroz';
