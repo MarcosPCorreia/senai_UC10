@@ -1,5 +1,7 @@
+//importação de pacote
 package model;
 
+//Classe que representa a tabela produto e seus campos do banco de dados
 public class Produto {
 
     private String nome;
@@ -8,6 +10,7 @@ public class Produto {
     private String unidadeMedida;
     private int idUnidadeMedia;
 
+    //Função que retorna informação do atributo da classe baseado-se na escolha do usuario no menuInsercao da Classe Menu
     public String getItem(String numero){
         if (numero.contentEquals("1")) {
             return this.getNome();
@@ -25,6 +28,7 @@ public class Produto {
         }
     }
 
+    //Função para inserir a nova informação no atributo da classe baseado-se na escolha do usuario no menuInsercao da Classe Menu
     public void setItem(String numero, String novainformacao){
         if (numero.contentEquals("1")) {
             this.setNome(novainformacao);
@@ -40,10 +44,12 @@ public class Produto {
         }
     }
 
+    //Função que representa a classe em String
     public String toString() {
         return "Nome: " +  this.getNome() + " Preço: " + this.getPreco() + " Quantidade: " + this.getQuantidade() + " " + this.getUnidadeMedida();
         }
 
+    // Getters e Setters
     /**
      * @return String return the nome
      */

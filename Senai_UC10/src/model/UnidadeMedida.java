@@ -1,9 +1,13 @@
+//Importação de pacotes
 package model;
 
+//Classe que representa a tabela unidademedida e seus campos do banco de dados
 public class UnidadeMedida {
     private int idUnidadeMedida;
     private String unidadeMedida;
 
+
+    // Getters e Setters
     /**
      * @return int return the idUnidadeMedida
      */
